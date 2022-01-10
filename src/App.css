@@ -23,7 +23,7 @@ img {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 25px;
   margin: 5px;
 }
 
@@ -41,12 +41,12 @@ p {
 
 .App {
   text-align: center;
-  width: 1000px;
+  width: 340px;
   height: 600px;
   background-color: rgb(87, 15, 155);
   border-radius: 25px;
   box-shadow: 15px 15px 15px rgba(255,255,255,0.5);
-  transition: 5s linear;
+  transition: 0.5s linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,4 +112,14 @@ p {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 480px) {
+  .App {
+    width: 1000px;
+  }
+  h2 {
+    font-size: 50px;
+    margin: 5px;
+  }
 }
