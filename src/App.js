@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
+import LocationInfo from './components/LocationInfo';
 
 const randomId = Math.floor((Math.random() * 126) + 1)
 
@@ -19,12 +20,12 @@ function App() {
   return (
     <div className="App">
       <SearchBox setLocation={setLocation} />
-      <h2>{location.name}</h2>
-      <div className='dataLocation' >
-        <h3>Type: {location.type}</h3>
-        <h3>Dimension: {location.dimension}</h3>
-        <h3>Population: {location.residents?.length}</h3>
-      </div>
+      <LocationInfo
+        name={location.name}
+        type={location.type}
+        dimension={location.dimension}
+        population={location.residents?.length}
+      />
     </div>
   );
 }
