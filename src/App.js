@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
 import LocationInfo from './components/LocationInfo';
+import ResidentsList from './components/ResidentsList';
 
 const randomId = Math.floor((Math.random() * 126) + 1)
 
@@ -26,6 +27,7 @@ function App() {
         dimension={location.dimension}
         population={location.residents?.length}
       />
+      <ResidentsList location={location} />
     </div>
   );
 }
