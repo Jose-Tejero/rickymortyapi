@@ -12,16 +12,27 @@ const ResidentInfo = ({resident, locationId}) => {
 
     console.log(being);
 
+    const styles = {
+        Alive: {
+            border: "10px solid green",
+            boxShadow: "0 0 15px green"            
+        },
+        Dead: {
+            border: "10px solid red",
+            boxShadow: "0 0 15px red"  
+        }
+    }
+
     return (
         <div className='card' >
-            <div className="name-n-img">
-                <h3>{being.data?.name}</h3>
-                <img src={being.data?.image} alt="" />
-            </div>
-            <div className="datas">
-                <p>Status: {being.data?.status}</p>
-                <p>Origin: {being.data?.origin.name}</p>
-                <p>Number of episodes: {being.data?.episode.length}</p>
+            <h3 className="name-of-beig">{being.data?.name}</h3>
+            <div className='image-n-datas' >
+                <img src={being.data?.image} alt="" style={styles[being.data?.status]} />
+                <div className="datas">
+                    <p>Status: {being.data?.status}</p>
+                    <p>Origin: {being.data?.origin.name}</p>
+                    <p>Episodes: {being.data?.episode.length}</p>
+                </div>
             </div>
         </div>
     );

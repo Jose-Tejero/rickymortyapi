@@ -5,8 +5,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(20, 17, 17);
-  font-family: 'Annie Use Your Telescope', cursive;
+  background-image: url(../src/images/mainB.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* filter: blur(8px); */
+  backdrop-filter: blur(8px);
   font-family: 'Creepster', cursive;
   color: black;
 }
@@ -14,8 +17,26 @@ body {
 img {
   width: 100px;
   border-radius: 50%;
-  border: 10px solid white;
-  box-shadow: 0 0 15px white;
+  border: 10px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 50px;
+  margin: 5px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 8px;
 }
 
 .App {
@@ -24,7 +45,7 @@ img {
   height: 600px;
   background-color: rgb(87, 15, 155);
   border-radius: 25px;
-  box-shadow: 5px 5px 5px rgba(255,255,255,0.5);
+  box-shadow: 15px 15px 15px rgba(255,255,255,0.5);
 }
 
 .dataLocation {
@@ -48,7 +69,9 @@ img {
 .card {
   display: grid;
   flex-direction: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 200px;
   background-image: url(../src/images/portal.jpg);
@@ -61,6 +84,13 @@ img {
 .datas {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-n-datas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
 }
