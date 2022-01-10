@@ -13,12 +13,16 @@ const ResidentInfo = ({resident, locationId}) => {
     console.log(being);
 
     return (
-        <div>
-            <h3>{being.data?.name}</h3>
-            <img src={being.data?.image} alt="" />
-            <p>Status: {being.data?.status}</p>
-            <p>Origin: {being.data?.origin.name}</p>
-            <p>Number of episodes: {being.data?.episode.length}</p>
+        <div className='card' >
+            <div className="name-n-img">
+                <h3>{being.data?.name}</h3>
+                <img src={being.data?.image} alt="" />
+            </div>
+            <div className="datas">
+                <p>Status: {being.data?.status}</p>
+                <p>Origin: {being.data?.origin.name}</p>
+                <p>Number of episodes: {being.data?.episode.length}</p>
+            </div>
         </div>
     );
 };
