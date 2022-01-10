@@ -14,12 +14,12 @@ const ResidentInfo = ({resident, locationId}) => {
 
     const styles = {
         Alive: {
-            border: "10px solid green",
-            boxShadow: "0 0 15px green"            
+            border: "10px solid #00AB08",
+            boxShadow: "0 0 15px #00AB08"            
         },
         Dead: {
-            border: "10px solid red",
-            boxShadow: "0 0 15px red"  
+            border: "10px solid #920717",
+            boxShadow: "0 0 15px #920717"
         }
     }
 
