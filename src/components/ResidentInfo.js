@@ -10,8 +10,6 @@ const ResidentInfo = ({resident, locationId}) => {
             .then(res => setBeing(res));
     }, [resident])
 
-    console.log(being);
-
     const styles = {
         Alive: {
             border: "10px solid #00AB08",

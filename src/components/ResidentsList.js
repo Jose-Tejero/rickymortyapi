@@ -4,6 +4,7 @@ import ResidentInfo from './ResidentInfo';
 const ResidentsList = ({location, population}) => {
 
     const [ width, setWidth ] = useState(window.innerWidth);
+    const [ page, setPage ] = useState(0);
 
     useEffect(() => {
         const changeWidth = () => setWidth(window.innerWidth);
@@ -13,7 +14,19 @@ const ResidentsList = ({location, population}) => {
         return () => window.removeEventListener( 'resize', changeWidth );
     }, []);
 
-    console.log(width);
+    const handleNextPage = () => {
+        if (page < (population - 6)) {
+            setPage(page + 6)
+        }
+    }
+
+    const handlePreviusPage = () => {
+        if (page > 0) {
+            setPage(page - 6)
+        }
+    }
+
+    console.log(page);
 
     return (
         <div>
@@ -23,11 +36,11 @@ const ResidentsList = ({location, population}) => {
                         <>
                             <div className='map-info' >
                                 {
-                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page,page + 6)
                                 }
                             </div>
-                            <button>Prev</button>
-                            <button>Next</button>
+                            <button onClick={handlePreviusPage} >Prev</button>
+                            <button onClick={handleNextPage} >Next</button>
                         </>
                     ) : (
                         <>

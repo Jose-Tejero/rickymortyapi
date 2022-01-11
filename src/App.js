@@ -18,8 +18,6 @@ function App() {
     setLoader(true);
   }, []);
 
-  console.log(location)
-
   return (
     <div className="App">
       {
