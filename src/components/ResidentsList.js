@@ -18,7 +18,7 @@ const ResidentsList = ({location}) => {
     return (
         <div className='map-info' >
             {
-                width>480 ? (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)) : (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2))
+                width>768 ? (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)) : (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2))
             }
         </div>
     );
