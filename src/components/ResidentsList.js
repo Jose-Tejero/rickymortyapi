@@ -11,14 +11,12 @@ const ResidentsList = ({location, population}) => {
         const changeWidth = () => setWidth(window.innerWidth);
 
         window.addEventListener( 'resize', changeWidth )
-
-        return () => window.removeEventListener( 'resize', changeWidth );
-    }, []);
-
-    useEffect(() => {
+        
         setPage2(0);
         setPage6(0);
-    }, [population])
+
+        return () => window.removeEventListener( 'resize', changeWidth );
+    }, [population]);
 
     const handleNextPage6 = () => {
         if (page6 < (population - 6)) {
