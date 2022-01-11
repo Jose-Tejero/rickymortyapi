@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ResidentInfo from './ResidentInfo';
 
-const ResidentsList = ({location}) => {
+const ResidentsList = ({location, population}) => {
 
     const [ width, setWidth ] = useState(window.innerWidth);
 
@@ -16,9 +16,29 @@ const ResidentsList = ({location}) => {
     console.log(width);
 
     return (
-        <div className='map-info' >
+        <div>
             {
-                width>768 ? (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)) : (location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2))
+                width>768 ? (
+                    <>
+                        <div className='map-info' >
+                            {
+                                location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
+                            }
+                        </div>
+                        <button>Prev</button>
+                        <button>Next</button>
+                    </>
+                ) : (
+                    <>
+                        <div className='map-info' >
+                            {
+                                location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
+                            }
+                        </div>
+                        <button>Prev</button>
+                        <button>Next</button>
+                    </>
+                )
             }
         </div>
     );

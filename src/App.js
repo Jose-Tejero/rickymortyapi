@@ -31,13 +31,15 @@ function App() {
               type={location.type}
               dimension={location.dimension}
               population={location.residents?.length}
+              />
+            <ResidentsList
+              location={location}
+              population={location.residents?.length}
             />
-            <ResidentsList location={location} />
           </>
-
         ) : (
           <div className='loader' ></div>
-        ) 
+        )
       }
     </div>
   );
