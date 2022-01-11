@@ -4,7 +4,8 @@ import ResidentInfo from './ResidentInfo';
 const ResidentsList = ({location, population}) => {
 
     const [ width, setWidth ] = useState(window.innerWidth);
-    const [ page, setPage ] = useState(0);
+    const [ page6, setPage6 ] = useState(0);
+    const [ page2, setPage2 ] = useState(0);
 
     useEffect(() => {
         const changeWidth = () => setWidth(window.innerWidth);
@@ -14,19 +15,31 @@ const ResidentsList = ({location, population}) => {
         return () => window.removeEventListener( 'resize', changeWidth );
     }, []);
 
-    const handleNextPage = () => {
-        if (page < (population - 6)) {
-            setPage(page + 6)
+    const handleNextPage6 = () => {
+        if (page6 < (population - 6)) {
+            setPage6(page6 + 6)
         }
     }
 
-    const handlePreviusPage = () => {
-        if (page > 0) {
-            setPage(page - 6)
+    const handlePreviusPage6 = () => {
+        if (page6 > 0) {
+            setPage6(page6 - 6)
         }
     }
 
-    console.log(page);
+    const handleNextPage2 = () => {
+        if (page2 < (population - 2)) {
+            setPage2(page2 + 2)
+        }
+    }
+
+    const handlePreviusPage2 = () => {
+        if (page2 > 0) {
+            setPage2(page2 - 2)
+        }
+    }
+
+    console.log(page2);
 
     return (
         <div>
@@ -36,11 +49,11 @@ const ResidentsList = ({location, population}) => {
                         <>
                             <div className='map-info' >
                                 {
-                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page,page + 6)
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page6,page6 + 6)
                                 }
                             </div>
-                            <button onClick={handlePreviusPage} >Prev</button>
-                            <button onClick={handleNextPage} >Next</button>
+                            <button onClick={handlePreviusPage6} >Prev</button>
+                            <button onClick={handleNextPage6} >Next</button>
                         </>
                     ) : (
                         <>
@@ -56,11 +69,11 @@ const ResidentsList = ({location, population}) => {
                         <>
                             <div className='map-info' >
                                 {
-                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page2,page2 + 2)
                                 }
                             </div>
-                            <button>Prev</button>
-                            <button>Next</button>
+                            <button onClick={handlePreviusPage2} >Prev</button>
+                            <button onClick={handleNextPage2} >Next</button>
                         </>
                     ) : (
                         <>
