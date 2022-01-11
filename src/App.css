@@ -39,6 +39,11 @@ p {
   margin: 8px;
 }
 
+span {
+  width: 50px;
+  color: greenyellow;
+}
+
 .App {
   text-align: center;
   width: 340px;
@@ -98,6 +103,13 @@ p {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+}
+
+.prev-next {
+  width: 135px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .loader {

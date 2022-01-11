@@ -52,8 +52,11 @@ const ResidentsList = ({location, population}) => {
                                     location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page6,page6 + 6)
                                 }
                             </div>
-                            <button onClick={handlePreviusPage6} >Prev</button>
-                            <button onClick={handleNextPage6} >Next</button>
+                            <div className="prev-next">
+                                <button onClick={handlePreviusPage6} >Prev</button>
+                                <span>{page6 + 1}-{page6 + 6}</span>
+                                <button onClick={handleNextPage6} >Next</button>
+                            </div>
                         </>
                     ) : (
                         <>
@@ -72,8 +75,11 @@ const ResidentsList = ({location, population}) => {
                                     location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(page2,page2 + 2)
                                 }
                             </div>
-                            <button onClick={handlePreviusPage2} >Prev</button>
-                            <button onClick={handleNextPage2} >Next</button>
+                            <div className="prev-next">
+                                <button onClick={handlePreviusPage2} >Prev</button>
+                                <span>{page2 + 1}-{page2 + 2}</span>
+                                <button onClick={handleNextPage2} >Next</button>
+                            </div>
                         </>
                     ) : (
                         <>
