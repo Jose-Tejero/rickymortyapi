@@ -19,25 +19,45 @@ const ResidentsList = ({location, population}) => {
         <div>
             {
                 width>768 ? (
-                    <>
-                        <div className='map-info' >
-                            {
-                                location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
-                            }
-                        </div>
-                        <button>Prev</button>
-                        <button>Next</button>
-                    </>
+                    population>6 ? (
+                        <>
+                            <div className='map-info' >
+                                {
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
+                                }
+                            </div>
+                            <button>Prev</button>
+                            <button>Next</button>
+                        </>
+                    ) : (
+                        <>
+                            <div className='map-info' >
+                                {
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
+                                }
+                            </div>
+                        </>
+                    )
                 ) : (
-                    <>
-                        <div className='map-info' >
-                            {
-                                location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
-                            }
-                        </div>
-                        <button>Prev</button>
-                        <button>Next</button>
-                    </>
+                    population>2 ? (
+                        <>
+                            <div className='map-info' >
+                                {
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
+                                }
+                            </div>
+                            <button>Prev</button>
+                            <button>Next</button>
+                        </>
+                    ) : (
+                        <>
+                            <div className='map-info' >
+                                {
+                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
+                                }
+                            </div>
+                        </>
+                    )
                 )
             }
         </div>
