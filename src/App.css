@@ -107,7 +107,7 @@ span {
 
 .prev-next {
   width: 135px;
-  margin: 0 auto;
+  margin: 5px auto;
   display: flex;
   justify-content: space-evenly;
 }

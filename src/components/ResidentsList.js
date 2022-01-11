@@ -15,6 +15,11 @@ const ResidentsList = ({location, population}) => {
         return () => window.removeEventListener( 'resize', changeWidth );
     }, []);
 
+    useEffect(() => {
+        setPage2(0);
+        setPage6(0);
+    }, [population])
+
     const handleNextPage6 = () => {
         if (page6 < (population - 6)) {
             setPage6(page6 + 6)
@@ -40,6 +45,7 @@ const ResidentsList = ({location, population}) => {
     }
 
     console.log(page2);
+    console.log(population);
 
     return (
         <div>
