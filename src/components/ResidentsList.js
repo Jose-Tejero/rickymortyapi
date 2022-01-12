@@ -42,9 +42,6 @@ const ResidentsList = ({location, population}) => {
         }
     }
 
-    console.log(page2);
-    console.log(population);
-
     return (
         <div>
             {
