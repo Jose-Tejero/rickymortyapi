@@ -60,13 +60,19 @@ const ResidentsList = ({location, population}) => {
                             </div>
                         </>
                     ) : (
-                        <>
-                            <div className='map-info' >
-                                {
-                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
-                                }
+                        population ? (
+                            <>
+                                <div className='map-info' >
+                                    {
+                                        location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,6)
+                                    }
+                                </div>
+                            </>
+                        ) : (
+                            <div className='card-empty' >
+                                <h3 className="no-population">No population</h3>
                             </div>
-                        </>
+                        )
                     )
                 ) : (
                     population>2 ? (
@@ -83,13 +89,19 @@ const ResidentsList = ({location, population}) => {
                             </div>
                         </>
                     ) : (
-                        <>
-                            <div className='map-info' >
-                                {
-                                    location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
-                                }
+                        population ? (
+                            <>
+                                <div className='map-info' >
+                                    {
+                                        location.residents?.map(resident => <ResidentInfo key={resident} resident={resident} locationId={location.id} />).slice(0,2)
+                                    }
+                                </div>
+                            </>
+                        ) : (
+                            <div className='card-empty' >
+                                <h3 className="no-population">No population</h3>
                             </div>
-                        </>
+                        )
                     )
                 )
             }
