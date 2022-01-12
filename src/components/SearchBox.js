@@ -5,15 +5,18 @@ const SearchBox = ({setLocation}) => {
 
     const [ id, setId ] = useState("");
 
-    const search = () => {
+    const search = e => {
+        e.preventDefault();
         axios.get(`https://rickandmortyapi.com/api/location/${id}`)
             .then(res => setLocation(res.data));
     }
 
     return (
         <div>
-            <input type="text" onChange={e => setId(e.target.value)} value={id} />
-            <button onClick={search} >Search</button>
+            <form>
+                <input type="text" onChange={e => setId(e.target.value)} value={id} required />
+                <button onClick={search} >Search</button>
+            </form>
         </div>
     );
 };
